@@ -17,6 +17,7 @@ import { IWorkspacesService, IStoredWorkspaceFolder } from 'vs/platform/workspac
 import { isLinux } from 'vs/base/common/platform';
 import { dirname, relative } from 'path';
 import { isEqualOrParent } from 'vs/base/common/paths';
+import { IWorkspaceConfigurationService } from 'vs/workbench/services/configuration/common/configuration';
 
 export class WorkspaceEditingService implements IWorkspaceEditingService {
 
@@ -27,7 +28,8 @@ export class WorkspaceEditingService implements IWorkspaceEditingService {
 		@IWorkspaceContextService private contextService: IWorkspaceContextService,
 		@IEnvironmentService private environmentService: IEnvironmentService,
 		@IWindowsService private windowsService: IWindowsService,
-		@IWorkspacesService private workspacesService: IWorkspacesService
+		@IWorkspacesService private workspacesService: IWorkspacesService,
+		@IWorkspaceConfigurationService private workspaceConfigurationService: IWorkspaceConfigurationService
 	) {
 	}
 
